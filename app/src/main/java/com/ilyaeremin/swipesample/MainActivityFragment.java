@@ -1,5 +1,6 @@
 package com.ilyaeremin.swipesample;
 
+import android.support.annotation.DrawableRes;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -39,8 +40,8 @@ public class MainActivityFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 trueFalse = !trueFalse;
-                textView.setText(String.valueOf(trueFalse));
-                //compound drawable cause closing swipeLayout
+                int icon = trueFalse ? android.R.drawable.ic_delete : android.R.drawable.ic_menu_save;
+                textView.setCompoundDrawablesWithIntrinsicBounds(icon, 0, 0, 0);
             }
         });
     }
